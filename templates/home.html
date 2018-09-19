@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h6>Hello World</h6>
+    <script src="https://js.stripe.com/v2/"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>Stripe.setPublishableKey("pk_test_lYpC3klMwJoufI6S2ajDtob5")</script>
+</head>
+<body>
+<h2>Buy for €650.00</h2>
+<form action="{% url 'charge' %}" method="post">
+  {% csrf_token %}
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_lYpC3klMwJoufI6S2ajDtob5"
+          data-description="MoovIT"
+          data-currency="EUR"
+          data-locale="EU"
+          data-amount="65000">
+  </script>
+</form>
+
+</body>
+</html>
